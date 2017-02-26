@@ -3,6 +3,7 @@ package ie.app.brian_casey_20007693;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,7 +26,43 @@ public class Shop extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Button b1 = (Button) findViewById(R.id.button);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.tesco.ie"));
+                    startActivity(browserIntent);
+                }
+            }
+        });
+
+        Button b2 = (Button) findViewById(R.id.button2);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://supervalu.ie"));
+                    startActivity(browserIntent);
+                }
+            }
+        });
+
+        Button b3 = (Button) findViewById(R.id.button3);
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.dunnesstores.com/"));
+                    startActivity(browserIntent);
+                }
+            }
+        });
+
+
     }
+
+
 
 
 
