@@ -86,7 +86,13 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.action_report) {
-            startActivity (new Intent(this, Report.class));
+            Bundle b=new Bundle();
+//            String[] stringArray = myList.toArray(new String[0]);
+            b.putStringArray("array1", myList.toArray(new String[0]));
+            Intent i=new Intent(this, Report.class);
+            i.putExtras(b);
+
+            startActivity (i);
             return true;
         }
         if (id == R.id.action_add)

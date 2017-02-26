@@ -25,4 +25,6 @@ import android.content.SharedPreferences;
 import android.app.Activity;
 
 public class Base {
+
+
 }
