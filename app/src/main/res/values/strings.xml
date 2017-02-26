@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My List</string>
+    <string name="action_settings">Shop</string>
+    <string name="action_report">Report</string>
+    <string name="action_add">Add Item</string>
+    <string name="title_activity_report">Report</string>
+    <string name="title_activity_shop">Shop</string>
+
+
+
+
+</resources>
