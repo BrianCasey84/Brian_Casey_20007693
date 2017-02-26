@@ -17,10 +17,13 @@ import java.util.ArrayList;
 
 public class Report extends AppCompatActivity {
 
-    ArrayList<String> reportList = null;
+//    Bundle b=this.getIntent().getExtras();
+//    String[] itemList=b.getStringArray("itemList");
+    private ArrayList itemList;
     // Adapter to show array list in the ListView
-    ArrayAdapter<String> adapter = null;
-    ListView lv = null;
+    private ArrayAdapter<String> adapter;
+    private ListView lv;
+
 
 
     @Override
@@ -29,6 +32,16 @@ public class Report extends AppCompatActivity {
         setContentView(R.layout.activity_report);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // Get a reference to the intent used to launch this Activity
+        Intent intent = getIntent();
+        // Extract the ArrayList from the intent
+        itemList = intent.getStringArrayListExtra("itemList");
+        // Constructor for ArrayAdaptor to add single item to ArrayList
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList);
+        lv = (ListView) findViewById(R.id.LVreport);
+        // Method to show ArrayList in the ListView
+        lv.setAdapter(adapter);
 
 
 

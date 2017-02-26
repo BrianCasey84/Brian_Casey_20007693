@@ -13,4 +13,10 @@
     tools:context="ie.app.brian_casey_20007693.Report"
     tools:showIn="@layout/activity_report">
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/LVreport" />
 </RelativeLayout>

@@ -35,12 +35,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
 
         myList = new ArrayList<>();
@@ -86,12 +89,12 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.action_report) {
-            Bundle b=new Bundle();
-//            String[] stringArray = myList.toArray(new String[0]);
-            b.putStringArray("array1", myList.toArray(new String[0]));
-            Intent i=new Intent(this, Report.class);
-            i.putExtras(b);
 
+            //Create a new intent to launch report activity
+            Intent i=new Intent(this, Report.class);
+            // Add the arraylist of items to the activity
+            i.putStringArrayListExtra("itemList", myList);
+            // launch the activity
             startActivity (i);
             return true;
         }
@@ -119,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             builder.show();
+
+
             return true;
         }
 
