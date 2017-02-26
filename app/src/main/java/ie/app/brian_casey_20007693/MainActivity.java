@@ -55,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 {
+                    myList.clear();
+                    lv.setAdapter(adapter);
+
                     Snackbar.make(view, "Items Cleared", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
