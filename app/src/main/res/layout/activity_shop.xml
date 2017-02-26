@@ -13,6 +13,8 @@
         android:theme="@style/AppTheme.AppBarOverlay"
         android:id="@+id/appBarLayout">
 
+
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -22,7 +24,8 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
+    <include layout="@layout/content_shop"
+        android:id="@+id/include" />
 
 
 </android.support.design.widget.CoordinatorLayout>

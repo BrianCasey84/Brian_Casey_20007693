@@ -13,4 +13,46 @@
     tools:context="ie.app.brian_casey_20007693.Shop"
     tools:showIn="@layout/activity_shop">
 
+    <TextView
+        android:text="@string/shoptitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView3"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <Button
+        android:text="@string/dunnesbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:id="@+id/button3"
+        android:layout_below="@+id/button2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="97dp" />
+
+    <Button
+        android:text="@string/supervaluebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:id="@+id/button2"
+        android:layout_below="@+id/button"
+        android:layout_alignStart="@+id/button3"
+        android:layout_alignEnd="@+id/button3" />
+
+    <Button
+        android:text="@string/tescobutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:id="@+id/button"
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/button2"
+        android:layout_alignEnd="@+id/button3" />
+
+
 </RelativeLayout>

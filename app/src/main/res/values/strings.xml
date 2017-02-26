@@ -5,8 +5,10 @@
     <string name="action_add">Add Item</string>
     <string name="title_activity_report">Report</string>
     <string name="title_activity_shop">Shop</string>
-
-
+    <string name="shoptitle">Where To Shop</string>
+    <string name="tescobutton">Tesco   </string>
+    <string name="supervaluebutton">SuperValue</string>
+    <string name="dunnesbutton">Dunnes Stores</string>
 
 
 </resources>
