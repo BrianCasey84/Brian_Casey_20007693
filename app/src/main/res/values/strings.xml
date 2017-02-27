@@ -9,6 +9,7 @@
     <string name="tescobutton">Tesco   </string>
     <string name="supervaluebutton">SuperValue</string>
     <string name="dunnesbutton">Dunnes Stores</string>
+    <string name="action_List">List</string>
 
 
 </resources>

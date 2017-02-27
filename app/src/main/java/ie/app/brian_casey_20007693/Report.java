@@ -51,7 +51,7 @@ public class Report extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_report, menu);
         return true;
     }
 
@@ -63,13 +63,9 @@ public class Report extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_shop) {
+        if (id == R.id.action_list) {
             // Launch Activity
-            startActivity(new Intent(this, Shop.class));
-            return true;
-        }
-        if (id == R.id.action_report) {
-            startActivity(new Intent(this, Report.class));
+            startActivity(new Intent(this, MainActivity.class));
             return true;
         }
 

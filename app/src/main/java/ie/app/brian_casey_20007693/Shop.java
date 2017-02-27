@@ -69,7 +69,7 @@ public class Shop extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menue_shop, menu);
         return true;
     }
 
@@ -81,15 +81,12 @@ public class Shop extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_shop) {
+        if (id == R.id.action_list) {
             // Launch Activity
-            startActivity(new Intent(this, Shop.class));
+            startActivity(new Intent(this, MainActivity.class));
             return true;
         }
-        if (id == R.id.action_report) {
-            startActivity(new Intent(this, Report.class));
-            return true;
-        }
+
 
         return super.onOptionsItemSelected(item);
     }
