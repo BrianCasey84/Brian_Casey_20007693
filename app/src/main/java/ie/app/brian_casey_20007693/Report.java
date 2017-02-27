@@ -17,8 +17,7 @@ import java.util.ArrayList;
 
 public class Report extends AppCompatActivity {
 
-//    Bundle b=this.getIntent().getExtras();
-//    String[] itemList=b.getStringArray("itemList");
+
     private ArrayList itemList;
     // Adapter to show array list in the ListView
     private ArrayAdapter<String> adapter;
@@ -43,9 +42,6 @@ public class Report extends AppCompatActivity {
         // Method to show ArrayList in the ListView
         lv.setAdapter(adapter);
 
-
-
-
     }
 
     @Override
@@ -62,7 +58,7 @@ public class Report extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+
         if (id == R.id.action_list) {
             // Launch Activity
             startActivity(new Intent(this, MainActivity.class));

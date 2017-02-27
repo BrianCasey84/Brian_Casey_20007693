@@ -34,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
     ListView lv = null;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                {
+                {   //method removes all of the elements from the list
                     myList.clear();
                     lv.setAdapter(adapter);
-
+                    //display text at the bottom of the screen
                     Snackbar.make(view, "Items Cleared", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
@@ -82,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+
         if (id == R.id.action_shop) {
             // Launch Activity
             startActivity (new Intent(this, Shop.class));
@@ -99,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.action_add)
-        {   // Create AlertDialog form
+        {   // Create AlertDialog builder
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Add Item");
             //EditText allows a text entry
@@ -111,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
                     //Text item added to the array
                     myList.add((input.getText().toString()));
-                   // Collections.sort(shoppingList);
                     lv.setAdapter(adapter);
                 }
             });//Set neggative button to cancel input

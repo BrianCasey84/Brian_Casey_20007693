@@ -30,7 +30,7 @@ public class Shop extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                {
+                {   //  reference to the intent used to launch site
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.tesco.ie"));
                     startActivity(browserIntent);
                 }
@@ -41,7 +41,7 @@ public class Shop extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                {
+                {   //  reference to the intent used to launch site
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://supervalu.ie"));
                     startActivity(browserIntent);
                 }
@@ -52,7 +52,7 @@ public class Shop extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                {
+                {   // reference to the intent used to launch site
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.dunnesstores.com/"));
                     startActivity(browserIntent);
                 }
