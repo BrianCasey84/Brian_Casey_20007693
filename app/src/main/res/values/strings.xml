@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My List</string>
+    <string name="app_name">Shopping List</string>
     <string name="action_settings">Shop</string>
     <string name="action_report">Report</string>
     <string name="action_add">Add Item</string>
@@ -10,6 +10,8 @@
     <string name="supervaluebutton">SuperValue</string>
     <string name="dunnesbutton">Dunnes Stores</string>
     <string name="action_List">List</string>
+    <string name="splash">splash</string>
+    <string name="welcome">Welcome</string>
 
 
 </resources>

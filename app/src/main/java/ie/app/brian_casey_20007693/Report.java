@@ -2,12 +2,17 @@ package ie.app.brian_casey_20007693;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Report extends AppCompatActivity {
