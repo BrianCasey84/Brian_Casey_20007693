@@ -12,6 +12,7 @@
     <string name="action_List">List</string>
     <string name="splash">splash</string>
     <string name="welcome">Welcome</string>
+    <color name="gray">#f8f8ff</color>
 
 
 </resources>
