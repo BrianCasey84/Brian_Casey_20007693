@@ -9,8 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 /**
- * Created by Administrator on 5/5/2016.
+ * Brian Casey 2017
  */
+
 public class DbHelper extends SQLiteOpenHelper {
     public static final String TAG = DbHelper.class.getSimpleName();
     public static final String DB_NAME = "myapp.db";

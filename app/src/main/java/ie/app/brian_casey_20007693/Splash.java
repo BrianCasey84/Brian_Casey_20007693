@@ -7,6 +7,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+/**
+ * Brian Casey 2017
+ */
+
 public class Splash extends Activity {
 
     @Override

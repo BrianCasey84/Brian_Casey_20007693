@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * Created by Administrator on 5/5/2016.
+ * Brian Casey 2017
  */
 public class Session {
     SharedPreferences prefs;

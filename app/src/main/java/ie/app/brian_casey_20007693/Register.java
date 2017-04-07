@@ -9,7 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Brian Casey 2017
+ */
+
 public class Register extends AppCompatActivity implements View.OnClickListener{
+
     private Button reg;
     private TextView tvLogin;
     private EditText etEmail, etPass;
@@ -30,11 +35,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+
         switch(v.getId()){
+            //When clicked register user
             case R.id.btnReg:
                 register();
                 break;
-            case R.id.tvLogin:
+            case R.id.tvLogin:// When clicked bring user to login screen
                 startActivity(new Intent(Register.this,Login.class));
                 finish();
                 break;

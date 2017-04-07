@@ -27,8 +27,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Register"
+            android:label="Register"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".MainActivity"
-            android:label="MainActivity"
+            android:label="Shopping List"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Report"

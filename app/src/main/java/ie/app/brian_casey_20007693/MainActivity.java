@@ -26,6 +26,9 @@ import android.content.SharedPreferences;
 import android.app.Activity;
 
 
+/**
+ * Brian Casey 2017
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,13 +74,7 @@ public class MainActivity extends AppCompatActivity {
         if(!session.loggedin()){
             logout();
         }
-        btnLogout = (Button)findViewById(R.id.btnLogout);
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logout();
-            }
-        });
+
     }
 
     private void logout(){
@@ -106,6 +103,11 @@ public class MainActivity extends AppCompatActivity {
             // Launch Activity
             startActivity (new Intent(this, Shop.class));
             return true;
+        }
+
+        if (id == R.id.action_logout) {
+            // Launch Activity
+            logout();
         }
         if (id == R.id.action_report) {
 

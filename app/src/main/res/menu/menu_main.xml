@@ -18,4 +18,10 @@
         android:icon="@drawable/ic_add_circle_white_36dp"
         android:title="@string/action_add"
         app:showAsAction="ifRoom" /> <!--ifRoom dispalys item on the bar-->
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="@string/action_logout"
+        app:showAsAction="never" />
+
 </menu>

@@ -16,6 +16,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.app.Activity;
 
+/**
+ * Brian Casey 2017
+ */
+
 public class Shop extends AppCompatActivity {
 
 

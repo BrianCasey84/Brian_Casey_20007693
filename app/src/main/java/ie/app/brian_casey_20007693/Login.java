@@ -8,7 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * Brian Casey 2017
+ */
+
 public class Login extends AppCompatActivity implements View.OnClickListener{
+
     private Button login, register;
     private EditText etEmail, etPass;
     private DbHelper db;
@@ -36,10 +41,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch(v.getId()){
+            //Login user when clicked
             case R.id.btnLogin:
                 login();
                 break;
-            case R.id.btnReg:
+            case R.id.btnReg:// When clicked bring user to register
                 startActivity(new Intent(Login.this,Register.class));
                 break;
             default:
