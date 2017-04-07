@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,6 +29,8 @@ import android.app.Activity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button btnLogout;
+    private Session session;
     ArrayList<String> myList = null;
     // Adapter to show array list in the ListView
     ArrayAdapter<String> adapter = null;
@@ -63,7 +66,26 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        session = new Session(this);
+        if(!session.loggedin()){
+            logout();
+        }
+        btnLogout = (Button)findViewById(R.id.btnLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout();
+            }
+        });
     }
+
+    private void logout(){
+        session.setLoggedin(false);
+        finish();
+        startActivity(new Intent(MainActivity.this,Login.class));
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

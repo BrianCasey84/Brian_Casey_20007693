@@ -2,6 +2,7 @@
     <string name="app_name">Shopping List</string>
     <string name="action_settings">Shop</string>
     <string name="action_report">Report</string>
+    <string name="action_logout">Logout</string>
     <string name="action_add">Add Item</string>
     <string name="title_activity_report">Report</string>
     <string name="title_activity_shop">Shop</string>
@@ -12,7 +13,7 @@
     <string name="action_List">List</string>
     <string name="splash">splash</string>
     <string name="welcome">Welcome</string>
-    <color name="gray">#f8f8ff</color>
+    <color name="gray">#000000</color>
 
 
 </resources>
