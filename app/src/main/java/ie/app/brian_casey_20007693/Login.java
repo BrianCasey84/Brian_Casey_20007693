@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         etPass = (EditText)findViewById(R.id.etPass);
         login.setOnClickListener(this);
         register.setOnClickListener(this);
-
+        // If user already logged in start Main Activity
         if(session.loggedin()){
             startActivity(new Intent(Login.this,MainActivity.class));
             finish();
@@ -56,12 +56,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private void login(){
         String email = etEmail.getText().toString();
         String pass = etPass.getText().toString();
-
+        // if email and password found start MainActivity
         if(db.getUser(email,pass)){
             session.setLoggedin(true);
             startActivity(new Intent(Login.this, MainActivity.class));
             finish();
-        }else{
+        }else{ //If not found print out wrong email/password
             Toast.makeText(getApplicationContext(), "Wrong email/password",Toast.LENGTH_SHORT).show();
         }
     }
