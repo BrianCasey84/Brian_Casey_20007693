@@ -32,7 +32,7 @@ import android.app.Activity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnLogout;
+   // private Button btnLogout;
     private Session session;
     ArrayList<String> myList = null;
     // Adapter to show array list in the ListView
