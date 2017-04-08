@@ -24,6 +24,7 @@ import android.content.DialogInterface;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.app.Activity;
+import android.widget.TextView;
 
 
 /**
@@ -34,10 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
    // private Button btnLogout;
     private Session session;
-    ArrayList<String> myList = null;
-    // Adapter to show array list in the ListView
-    ArrayAdapter<String> adapter = null;
-    ListView lv = null;
+    ArrayAdapter<String> mAdapter;
+    DbListHelper dbListHelper;
+    ListView lstTask;
 
 
     @Override
@@ -47,32 +47,40 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        dbListHelper = new DbListHelper(this);
 
+        lstTask = (ListView)findViewById(R.id.lstTask);
 
-        myList = new ArrayList<>();
-        // Constructor for ArrayAdaptor to add single item to ArrayList
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, myList);
-        lv = (ListView) findViewById(R.id.listView);
-        // Method to show ArrayList in the ListView
-        lv.setAdapter(adapter);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.clear);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                {   //method removes all of the elements from the list
-                    myList.clear();
-                    lv.setAdapter(adapter);
-                    //display text at the bottom of the screen
-                    Snackbar.make(view, "Items Cleared", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            }
-        });
+        loadTaskList();
 
         session = new Session(this);
         if(!session.loggedin()){
             logout();
+        }
+
+    }
+
+    private void loadTaskList() {
+
+        ArrayList<String> taskList = dbListHelper.getTaskList();
+
+
+        if(mAdapter==null){
+
+            mAdapter = new ArrayAdapter<String>(this,R.layout.row,R.id.task_title,taskList);
+
+            lstTask.setAdapter(mAdapter);
+
+        }
+
+        else{
+
+            mAdapter.clear();
+
+            mAdapter.addAll(taskList);
+
+            mAdapter.notifyDataSetChanged();
+
         }
 
     }
@@ -109,48 +117,69 @@ public class MainActivity extends AppCompatActivity {
             // Launch Activity
             logout();
         }
-        if (id == R.id.action_report) {
 
-            //Create a new intent to launch report activity
-            Intent i=new Intent(this, Report.class);
-            // Add the arraylist of items to the activity
-            i.putStringArrayListExtra("itemList", myList);
-            // launch the activity
-            startActivity (i);
-            return true;
-        }
-        if (id == R.id.action_add)
-        {   // Create AlertDialog builder
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Add Item");
-            //EditText allows a text entry
-            final EditText input = new EditText(this);
-            builder.setView(input);
-            //Set positive button to confirm input
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    //Text item added to the array
-                    myList.add((input.getText().toString()));
-                    lv.setAdapter(adapter);
-                }
-            });//Set neggative button to cancel input
-            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                }
-            });
-            builder.show();
+        switch (item.getItemId()){
 
+            case R.id.action_add_task:
 
-            return true;
+                final EditText taskEditText = new EditText(this);
+
+                AlertDialog dialog = new AlertDialog.Builder(this)
+
+                        .setTitle("Add New Task")
+
+                        .setMessage("What do you want to do next?")
+
+                        .setView(taskEditText)
+
+                        .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+
+                            @Override
+
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                String task = String.valueOf(taskEditText.getText());
+
+                                dbListHelper.insertNewTask(task);
+
+                                loadTaskList();
+
+                            }
+
+                        })
+
+                        .setNegativeButton("Cancel",null)
+
+                        .create();
+
+                dialog.show();
+
+                return true;
+
         }
 
         return super.onOptionsItemSelected(item);
 
+    }
+
+    public void deleteTask(View view){
+
+        View parent = (View)view.getParent();
+
+        TextView taskTextView = (TextView)findViewById(R.id.task_title);
+
+        String task = String.valueOf(taskTextView.getText());
+
+        dbListHelper.deleteTask(task);
+
+        loadTaskList();
 
     }
+
+
+
+
+
 
 
 }

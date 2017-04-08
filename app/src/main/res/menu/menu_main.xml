@@ -14,7 +14,7 @@
         android:visible="true"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_add"
+        android:id="@+id/action_add_task"
         android:icon="@drawable/ic_add_circle_white_36dp"
         android:title="@string/action_add"
         app:showAsAction="ifRoom" /> <!--ifRoom dispalys item on the bar-->
