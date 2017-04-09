@@ -23,7 +23,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        //initialise buttons
         db = new DbHelper(this);
         reg = (Button)findViewById(R.id.btnReg);
         tvLogin = (TextView)findViewById(R.id.tvLogin);
@@ -54,9 +54,11 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         String email = etEmail.getText().toString();
         String pass = etPass.getText().toString();
         if(email.isEmpty() && pass.isEmpty()){
+            //If no text entered print this to the user
             displayToast("Username/password field empty");
         }else{
             db.addUser(email,pass);
+            //When details added to database print thint to user
             displayToast("User registered");
             finish();
         }
