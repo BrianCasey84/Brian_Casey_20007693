@@ -4,6 +4,7 @@ package ie.app.brian_casey_20007693;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -77,5 +78,20 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
 
         return false;
+    }
+
+    public String getUsername() throws SQLException {
+        String username = "";
+        Cursor cursor = this.getReadableDatabase().query(
+                USER_TABLE, new String[] { COLUMN_ID},
+                null, null, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+                username = cursor.getString(0);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return username;
     }
 }

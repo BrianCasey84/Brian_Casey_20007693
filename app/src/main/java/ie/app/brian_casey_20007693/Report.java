@@ -11,19 +11,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Report extends AppCompatActivity {
 
-
-    private ArrayList itemList;
-    // Adapter to show array list in the ListView
-    private ArrayAdapter<String> adapter;
-    private ListView lv;
-
-
+    TextView LVreport;
+    DbHelper helper = new DbHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +28,7 @@ public class Report extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Get a reference to the intent used to launch this Activity
-        Intent intent = getIntent();
-        // Extract the ArrayList from the intent
-        itemList = intent.getStringArrayListExtra("itemList");
-        // Constructor for ArrayAdaptor to add single item to ArrayList
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList);
-        lv = (ListView) findViewById(R.id.LVreport);
-        // Method to show ArrayList in the ListView
-        lv.setAdapter(adapter);
-
+        LVreport.setText(helper.getUsername());
     }
 
     @Override

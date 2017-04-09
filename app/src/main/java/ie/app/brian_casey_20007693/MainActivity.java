@@ -108,6 +108,12 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.action_report) {
+            // Launch Activity
+            startActivity (new Intent(this, Report.class));
+            return true;
+        }
+
         if (id == R.id.action_logout) {
             // Launch Activity
             logout();
