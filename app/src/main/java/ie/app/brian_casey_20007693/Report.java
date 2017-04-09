@@ -24,7 +24,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Report extends AppCompatActivity {
-    private DbHelper db;
+
     private Session session;
     TextView LVreport;
     DbHelper helper;
@@ -35,6 +35,7 @@ public class Report extends AppCompatActivity {
         setContentView(R.layout.activity_report);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        LVreport =  (TextView)findViewById(R.id.LVreport);
         helper = new DbHelper(this);
         session = new Session(this);
         LVreport.setText(helper.getUsername());

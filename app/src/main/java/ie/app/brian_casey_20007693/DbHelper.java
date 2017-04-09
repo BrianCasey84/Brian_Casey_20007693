@@ -83,7 +83,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public String getUsername() throws SQLException {
         String username = "";
         Cursor cursor = this.getReadableDatabase().query(
-                USER_TABLE, new String[] { COLUMN_ID},
+                USER_TABLE, new String[] {COLUMN_EMAIL},
                 null, null, null, null, null);
         if (cursor.moveToFirst()) {
             do {
