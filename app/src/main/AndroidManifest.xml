@@ -32,6 +32,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
+            android:launchMode="singleTop"
             android:label="Shopping List"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

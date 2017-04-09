@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -126,9 +127,9 @@ public class MainActivity extends AppCompatActivity {
 
                 AlertDialog dialog = new AlertDialog.Builder(this)
 
-                        .setTitle("Add New Task")
+                        .setTitle("Add New Item")
 
-                        .setMessage("What do you want to do next?")
+                        .setMessage("What do you want to add next?")
 
                         .setView(taskEditText)
 
@@ -163,17 +164,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void deleteTask(View view){
-
         View parent = (View)view.getParent();
-
-        TextView taskTextView = (TextView)findViewById(R.id.task_title);
-
+        TextView taskTextView = (TextView)parent.findViewById(R.id.task_title);
+        Log.e("String", (String) taskTextView.getText());
         String task = String.valueOf(taskTextView.getText());
-
         dbListHelper.deleteTask(task);
-
         loadTaskList();
-
     }
 
 

@@ -23,7 +23,7 @@
 
         android:id="@+id/btnDelete"
 
-        android:text="DELETE"
+        android:text="Remove"
 
         android:layout_alignParentEnd="true"
 
