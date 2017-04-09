@@ -12,14 +12,22 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Report extends AppCompatActivity {
-
+    private DbHelper db;
+    private Session session;
     TextView LVreport;
-    DbHelper helper = new DbHelper(this);
+    DbHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +35,17 @@ public class Report extends AppCompatActivity {
         setContentView(R.layout.activity_report);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        helper = new DbHelper(this);
+        session = new Session(this);
         LVreport.setText(helper.getUsername());
     }
+
+    private void logout(){
+        session.setLoggedin(false);
+        finish();
+        startActivity(new Intent(Report.this,Login.class));
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
