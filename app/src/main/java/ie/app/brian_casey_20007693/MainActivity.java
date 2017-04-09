@@ -10,15 +10,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import android.app.AlertDialog;
 import android.widget.EditText;
 import android.content.DialogInterface;
-
 import android.widget.TextView;
 
 
@@ -63,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         if(mAdapter==null){
 
             mAdapter = new ArrayAdapter<String>(this,R.layout.row,R.id.task_title,taskList);
-
             lstTask.setAdapter(mAdapter);
 
         }
@@ -71,9 +66,7 @@ public class MainActivity extends AppCompatActivity {
         else{
 
             mAdapter.clear();
-
             mAdapter.addAll(taskList);
-
             mAdapter.notifyDataSetChanged();
 
         }
@@ -120,29 +113,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         switch (item.getItemId()){
-
             case R.id.action_add_task:
-
                 final EditText taskEditText = new EditText(this);
 
                 AlertDialog dialog = new AlertDialog.Builder(this)
-
                         .setTitle("Add New Item")
-
                         .setMessage("What do you want to add next?")
-
                         .setView(taskEditText)
-
                         .setPositiveButton("Add", new DialogInterface.OnClickListener() {
 
                             @Override
 
                             public void onClick(DialogInterface dialog, int which) {
-
                                 String task = String.valueOf(taskEditText.getText());
-
                                 dbListHelper.insertNewTask(task);
-
                                 loadTaskList();
 
                             }
@@ -150,9 +134,7 @@ public class MainActivity extends AppCompatActivity {
                         })
 
                         .setNegativeButton("Cancel",null)
-
                         .create();
-
                 dialog.show();
 
                 return true;
@@ -162,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
-
+    //Remove items form the list
     public void deleteTask(View view){
         View parent = (View)view.getParent();
         TextView taskTextView = (TextView)parent.findViewById(R.id.task_title);

@@ -14,9 +14,10 @@
     tools:showIn="@layout/activity_report">
 
     <TextView
+        android:id="@+id/LVreport"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:id="@+id/LVreport" />
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 </RelativeLayout>

@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Shopping List</string>
     <string name="action_settings">Shop</string>
-    <string name="action_report">Report</string>
+    <string name="action_report">UserReport</string>
     <string name="action_logout">Logout</string>
     <string name="action_add">Add Item</string>
-    <string name="title_activity_report">Report</string>
+    <string name="title_activity_report">User Report</string>
     <string name="title_activity_shop">Shop</string>
     <string name="shoptitle">Where To Shop</string>
     <string name="tescobutton">Tesco   </string>
